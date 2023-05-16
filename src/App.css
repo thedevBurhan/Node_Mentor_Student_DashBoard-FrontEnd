@@ -1,38 +1,139 @@
-.App {
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family:Arial, Helvetica, sans-serif ;
+}
+header{
+  display: flex;
+  flex-direction:column;
+   justify-content: center;
+   align-items: center;
+}
+.Nav button{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  height: 3px;
+  width: 100px;
+  text-align: center;
+ 
+}
+.Nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:8px;
+  margin: 8px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ .center{
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  margin-top:10rem;
+ }
+.main-component{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  
 }
-
-.App-link {
-  color: #61dafb;
+ 
+.heading{
+  margin-top: 2rem;
+  padding : 5px;
+  font-family: sans-serif;
+  color: rgb(229, 12, 175);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ 
+.main-segment{
+ width: 80%;
+  text-align: center;
+  height: 75%;
+  /* border : 1px solid red; */
+  padding: 5px;
+  
+}
+ .cards{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.373);
+  border-radius: 5px;
+  width:auto;
+  /* margin-top: -10rem; */
+ }
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap :1rem;
+  background-color: rgba(169, 164, 164, 0.067);
+  box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.373);
+  border-radius: 5px;
+  height: 200px;
+  margin : 12px;
+ 
+}
+ 
+.card-container{
+  display: grid;
+  gap :1rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+.value{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top:10px ;
+}
+input{
+  box-shadow:2px 2px rgba(128, 128, 128, 0.373);
+  border: 0ch;
+  padding: 5px;
+  outline: 0ch;
+  border-radius: 5px;
+  margin: 2px;
+}
+button{
+  padding: 8px;
+  background-color: pink;
+  border-radius: 5px;
+  border: 0ch;
+  margin-bottom: 5px;
+}
+.studData{
+  /* margin: 2px; */
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.heads{
+  margin-top: -10rem;
+}
+.NoPage{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin:auto;
+  padding: 50px;
+  gap:1rem;
+  width: fit-content;
+}
+.NoPage button{
+  width: fit-content;
+  display: flex;
+}
+/* .card:hover{
+  margin-top: -.15rem;
+  margin-bottom: .25rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+} */
+button:hover{
+  background-color: deeppink;
 }
