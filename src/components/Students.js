@@ -29,6 +29,8 @@ const Students = ({ students, setStudents }) => {
       title={"Students Dashboard"}
       description={"This page content all student data"}
     >
+       <p><b>Note:</b>If you make any <b>changes</b> go to Home/Dashboard and refresh the tab to see changes...</p>
+      <br/>
       <div className="card-container">
         {students.map((students, idx) => (
           <div className="card" key={idx}>
