@@ -4,11 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router} from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
+import StudentProvider from './Context/StudentContext.js';
+import MentorProvider from './Context/MentorContext.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <Router>
+    <StudentProvider>
+      <MentorProvider>
     <App />
+    <ToastContainer/>
+    </MentorProvider>
+    </StudentProvider>
   </Router>
 );
 

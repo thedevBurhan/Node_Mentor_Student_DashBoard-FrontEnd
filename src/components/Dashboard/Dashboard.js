@@ -1,5 +1,5 @@
 import React from "react";
-import Base from "../Base/Base";
+import Base from "../../Base/Base";
 import Error from "./Dash.gif";
 const Dashboard = () => {
   return (

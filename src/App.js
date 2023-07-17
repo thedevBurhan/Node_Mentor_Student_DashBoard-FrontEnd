@@ -1,89 +1,57 @@
 import "./App.css";
-import React,{useEffect, useState} from "react";
-import data from "./Data/data";
-import Base from "./Base/Base";
-import AddStudents from "./components/AddStudents";
-import Students from "./components/Students";
+import AddStudents from "./components/StudentComponents/AddStudents";
+import Students from "./components/StudentComponents/Students";
 import {Switch,Route} from "react-router-dom"
-import UpdateStudentsDetails from "./components/UpdateStudentsDetails";
-import NoPage from "./components/NoPage";
-import Dashboard from "./components/Dashboard";
-import data1 from "./Data/data1";
-import Mentor from "./components/Mentor";
-import AddMentor from "./components/AddMentor";
-import UpdateMentorDetails from "./components/UpdateMentorDetails"
+import UpdateStudentsDetails from "./components/StudentComponents/UpdateStudentsDetails";
+import NoPage from "./components/NoPage/NoPage";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Mentor from "./components/MentorComponents/Mentor";
+import AddMentor from "./components/MentorComponents/AddMentor";
+import UpdateMentorDetails from "./components/MentorComponents/UpdateMentorDetails"
+import Loginpage from "./components/Login/login";
+import NewResgister from "./components/Login/SignIn";
+
+
 function App() {
-  const [students,setStudents]=useState([]);
-  const[mentor,setMentor]=useState([]);
-  useEffect (()=>{
-   
-    const getStudentData=async()=>{
-        
-      const response=await fetch("https://6460bf97ca2d89f7e75dd6d0.mockapi.io/Users",{
-          method:"GET",
-         })
-           const data=await response.json();
-          //  console.log (data)
-          if(data){
-            setStudents(data);
-          }
-        }
-        getStudentData();
-  },[])
-  useEffect (()=>{
-   
-    const getMentorData=async()=>{
-        
-      const response=await fetch("https://6460bf97ca2d89f7e75dd6d0.mockapi.io/Mentor",{
-          method:"GET",
-         })
-           const data=await response.json();
-          //  console.log (data)
-          if(data){
-            setMentor(data);
-          }
-        }
-        getMentorData();
-  },[])
-  
-  
   return (
 
     <div className="App">
       <Switch>
       <Route exact path="/">
+          <Loginpage
+           />
+        </Route>
+        <Route  path="/SignIn">
+          <NewResgister/>
+        </Route>
+      <Route  path="/DashBoard">
           <Dashboard/>
         </Route>
         <Route path="/students">
         <Students
-         students={students}
-         setStudents={setStudents} />
+         />
         </Route>
         <Route path="/add">
           <AddStudents
-          students={students}
-          setStudents={setStudents}/>
+          />
         </Route>
         <Route path="/edit/:id/">
           <UpdateStudentsDetails
-           students={students}
-           setStudents={setStudents}/>
+         />
         </Route>
         <Route path="/mentor">
         <Mentor
-         mentor={mentor}
-         setMentor={setMentor} />
+         />
         </Route>
         <Route path="/adds">
           <AddMentor
-           mentor={mentor}
-           setMentor={setMentor}/>
+          />
         </Route>
         <Route path="/edits/:id/">
           <UpdateMentorDetails
-            mentor={mentor}
-            setMentor={setMentor}/>
+           />
         </Route>
+       
         <Route path="**">
           <NoPage/>
         </Route>
